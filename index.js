@@ -1,8 +1,8 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateMarkdown = ("generateMarkdown");
 const questions = [];
-inquirer
+var data = ['questions'];
+return inquirer
     .prompt([{
             type: "input",
             message: "Title?",
@@ -64,19 +64,63 @@ inquirer
         }
     ])
     .then(() => {
-        var ReadMe = generateMarkdown(questions);
-        fs.writeFile("generator.md", ReadMe, err => {
+        let ReadMe = generateMarkdown(questions);
+        fs.writeFile('readme', ReadMe, data, err => {
             if (err) throw err;
             console.log("Generated ReadMe");
         });
     });
 
+//function writeToFile(fileName, data) {}
 // function to initialize program
-function writeToFile(fileName, data) {}
-// function to initialize program
-function init() {
+function init(data) {
 
 }
 
 // function call to initialize program
 init();
+// function to generate markdown for README
+function generateMarkdown(data) {
+    return `
+
+#${data.title}
+
+##Title
+
+#${data.description}
+
+#description
+
+#${data.toc}
+
+#toc
+
+#${data.install}
+
+#install
+
+#${data.license}
+
+#license
+
+#${data.email}
+
+#email
+
+#${data.contributor}
+
+#contributor
+
+#${data.test}
+
+#test
+
+
+#${data.random}
+
+#random
+
+`;
+}
+
+module.exports = generateMarkdown;
