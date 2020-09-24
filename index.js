@@ -72,6 +72,8 @@ inquirer
     });
 
 // function to initialize program
+function writeToFile(fileName, data) {}
+// function to initialize program
 function init() {
 
 }
