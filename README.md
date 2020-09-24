@@ -1,32 +1,7 @@
-
-##Title
-${response.title}
-
-
-#description
-${response.description}
+Title
+Generate Good README.md
 
 
-#toc
-${response.toc}
+Description
+With javascript and node.js create a good README.md generator
 
-#install
-${response.install}
-
-
-#license
-${response.license}
-
-#email
-${response.email}
-
-
-#contributor
-${response.contributor}
-
-
-#test
-${response.test}
-
-#random
-${response.random}
