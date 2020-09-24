@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const questions = [];
-var data = ['questions'];
+let data = ['questions'];
 return inquirer
     .prompt([{
             type: "input",
@@ -65,7 +65,7 @@ return inquirer
     ])
     .then(() => {
         let ReadMe = generateMarkdown(questions);
-        fs.writeFile('readme', ReadMe, data, err => {
+        fs.writeFileSync('.md', ReadMe, data, err => {
             if (err) throw err;
             console.log("Generated ReadMe");
         });
