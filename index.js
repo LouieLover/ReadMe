@@ -1,7 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const questions = [];
-let data = require('inquirer');
+//const questions = [];
 return inquirer
     .prompt([{
             type: "input",
@@ -62,13 +61,14 @@ return inquirer
             message: "Anything Else?",
             name: "random"
         }
-    ])
-    .then(() => {
-        let ReadMe = generateMarkdown(questions);
-        fs.writeFileSync('.md', ReadMe, data, err => {
+    ]).then((data) => {
+        console.log(data);
+        let ReadMe = generateMarkdown(data);
+        fs.writeFileSync('SampleREADME.md', ReadMe, "utf-8");
+        err => {
             if (err) throw err;
             console.log("Generated ReadMe");
-        });
+        };
     });
 
 //function writeToFile(fileName, data) {}
@@ -79,46 +79,49 @@ function init(data) {
 
 // function call to initialize program
 init();
+
 // function to generate markdown for README
 function generateMarkdown(data) {
     return `
+    
+#Title
+#${data.Title}
 
-#${data.title}
 
-##Title
-
-#${data.description}
 
 #description
+#${data.description}
 
-#${data.toc}
 
 #toc
+#${data.toc}
 
-#${data.install}
 
 #install
-
-#${data.license}
+\`\`\` 
+${data.install}
+\`\`\`  
 
 #license
+#${data.license}
 
-#${data.email}
 
 #email
+[${data.email}](mailto:${data.email})
 
-#${data.contributor}
+
 
 #contributor
+#${data.contributor}
 
-#${data.test}
 
 #test
+#${data.test}
 
 
-#${data.random}
 
 #random
+#${data.random}
 
 `;
 }

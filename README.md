@@ -1,39 +1,32 @@
 
-
-#undefined
-
 ##Title
+${response.title}
 
-#undefined
 
 #description
+${response.description}
 
-#undefined
 
 #toc
-
-#undefined
+${response.toc}
 
 #install
+${response.install}
 
-#undefined
 
 #license
-
-#undefined
+${response.license}
 
 #email
+${response.email}
 
-#undefined
 
 #contributor
+${response.contributor}
 
-#undefined
 
 #test
-
-
-#undefined
+${response.test}
 
 #random
-
+${response.random}
